@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.css">
+
+    <style>
+        .box {
+            width: 500px;
+            height: auto;
+            border: 1px solid #000;
+            border-radius: 10px;
+            margin: auto;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+
+
+<div class="box">
+    <div class="form-group">
+        <form action="/send" method="post">
+            <label for="">请选择地区:</label>
+            <select name="dist" class="form-control">
+
+                <option value="0">朝阳</option>
+                <option value="1">东城</option>
+                <option value="2">丰台</option>
+                <option value="3">海淀</option>
+                <option value="4">西城</option>
+                <option value="-1">石景山</option>
+
+            </select>
+
+            <label for="">请选择楼层范围:</label>
+            <select name="floor" class="form-control">
+                <option value="-1">高层</option>
+                <option value="5">中层</option>
+                <option value="6">底层</option>
+            </select>
+
+            <div>选择室内数量:</div>
+            <label class="radio-inline">
+                <input type="radio" name="roomnum" value="1"> 1
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="roomnum" value="2" checked> 2
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="roomnum" value="3"> 3
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="roomnum" value="4"> 4
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="roomnum" value="5"> 5
+            </label>
+
+            <div>选择厅数量:</div>
+            <label class="radio-inline">
+                <input type="radio" name="halls" value="1"> 1
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="halls" value="2" checked> 2
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="halls" value="3"> 3
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="halls" value="4"> 4
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="halls" value="5"> 5
+            </label>
+            <br>
+            <label for="area">请输入面积：</label>
+            <input type="text" id="area" name="area" class="form-control" value="120">
+
+
+            <label for="">是否靠近地铁:</label><br>
+            <label for="subway1">是</label>
+            <input type="radio" name="subway" id="subway1" value="1" checked>
+            <label for="subway2">否</label>
+            <input type="radio" name="subway" id="subway2" value="0">
+
+            <br>
+            <label for="">是否是学区房:</label><br>
+            <label for="school1">是</label>
+            <input type="radio" name="school" id="school1" value="1" checked>
+            <label for="school2">否</label>
+            <input type="radio" name="school" id="school2" value="0">
+
+            <br>
+
+            <button type="submit" class="btn btn-default">提交</button>
+
+        </form>
+    </div>
+
+
+</div>
+{% if datas %}
+  <h1 style="text-align: center;color:red">
+
+      {{datas}}
+  </h1>
+
+{% endif %}
+
+</body>
+</html>
